@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pendaftaran</title>
+</head>
+<body>
+    <div class="tabs">
+        <button class="tab-button" onclick="openTab('registrasi')">Registrasi</button>
+        <button class="tab-button" onclick="openTab('list-pendaftar')">List Pendaftar</button>
+    </div>
+    
+    <div id="registrasi" class="tab-content">
+        <h2>Form Registrasi</h2>
+        <form id="registration-form">
+            <label for="nama">Nama (Minimal 10 karakter):</label>
+            <input type="text" id="nama" name="nama" required minlength="10"><br>
+            
+            <label for="umur">Umur (Minimal 25 tahun):</label>
+            <input type="number" id="umur" name="umur" required min="25"><br>
+            
+            <label for="uangSangu">Uang Saku (Minimal 100 ribu dan maksimal 1 juta):</label>
+            <input type="number" id="uangSangu" name="uangSangu" required min="100000" max="1000000"><br>
+            
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+    
+    <div id="list-pendaftar" class="tab-content">
+        <h2>List Pendaftar</h2>
+        <table id="pendaftar-table">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Uang Saku</th>
+                </tr>
+            </thead>
+            <tbody id="pendaftar-data">
+                <!-- Data pendaftar akan ditampilkan di sini -->
+            </tbody>
+        </table>
+        <p id="resume-pendaftar"></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
